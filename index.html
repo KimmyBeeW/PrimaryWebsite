@@ -264,7 +264,7 @@
             Follow along with the family at home. Tap below for the current
             <em>Come, Follow Me</em> lesson on the official Church website.
           </p>
-          <a class="btn btn--primary" href="https://www.churchofjesuschrist.org/study/come-follow-me?lang=eng" target="_blank" rel="noopener">
+          <a id="cfm-link" class="btn btn--primary" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/24?lang=eng" target="_blank" rel="noopener">
             This Week's "Come, Follow Me" Lesson →
           </a>
         </div>
@@ -344,6 +344,36 @@
       </p>
     </div>
   </footer>
+
+  <!-- Update the "Come, Follow Me" link to the current week automatically -->
+  <script>
+    (function () {
+      // Anchor: Come, Follow Me week 24 runs Mon June 8 – Sun June 14, 2026.
+      // Weeks run Monday through Sunday. Using the Monday that starts week 24
+      // lets us figure out any week number from today's date.
+      var ANCHOR_WEEK = 24;
+      var anchorMonday = new Date(2026, 5, 8); // June 8, 2026 (month is 0-indexed)
+      var TOTAL_WEEKS = 52; // 2026 Old Testament manual has 52 weekly lessons
+      var BASE_URL =
+        "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/";
+
+      // Today at local midnight, so the time of day doesn't affect the math.
+      var now = new Date();
+      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      var msPerDay = 24 * 60 * 60 * 1000;
+      var daysSinceAnchor = Math.round((today - anchorMonday) / msPerDay);
+      var weeksSinceAnchor = Math.floor(daysSinceAnchor / 7);
+      var week = ANCHOR_WEEK + weeksSinceAnchor;
+
+      var link = document.getElementById("cfm-link");
+      if (link && week >= 1 && week <= TOTAL_WEEKS) {
+        link.href = BASE_URL + week + "?lang=eng";
+      }
+      // If the date is outside the 2026 manual, the link keeps its default
+      // href (week 24) rather than pointing to a non-existent week.
+    })();
+  </script>
 
 </body>
 </html>
