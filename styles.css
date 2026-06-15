@@ -384,6 +384,19 @@ a { color: var(--terracotta); }
 }
 .btn--primary:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 
+.btn--secondary {
+  display: block;
+  width: fit-content;
+  background: var(--cream-card);
+  color: var(--terracotta);
+  box-shadow: inset 0 0 0 2px var(--terracotta-soft);
+  margin-top: 0.75rem;
+}
+.btn--secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 2px var(--terracotta), var(--shadow-soft);
+}
+
 /* ============================= LEADERS ============================= */
 .leaders {
   display: grid;
@@ -401,6 +414,35 @@ a { color: var(--terracotta); }
   font-size: 2.5rem;
   box-shadow: var(--shadow-soft);
   border: 4px solid var(--cream-card);
+  overflow: hidden;
+}
+.leader__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* Zoom in on the leaders' faces. 
+   transform-origin marks origin (50% 50% is center). 
+   lower x to move frame left, lower y to move frame up). */
+.leader__photo-img--zoom-leber {
+  transform: scale(1.4);
+  transform-origin: 45% 50%;
+}
+.leader__photo-img--zoom-ashton {
+  transform: scale(3.7);
+  transform-origin: 35% 33%;
+}
+.leader__photo-img--zoom-nitta {
+  transform: scale(1.6);
+  transform-origin: 3% 65%;
+}
+.leader__photo-img--zoom-hatch {
+  transform: scale(1.3);
+  transform-origin: 55% 2%;
+}
+.leader__photo-img--zoom-williams {
+  transform: scale(1.4);
+  transform-origin: 45% 50%;
 }
 .leader:nth-child(2) .leader__photo { background: var(--sky-soft); }
 .leader:nth-child(3) .leader__photo { background: var(--yellow-soft); }
