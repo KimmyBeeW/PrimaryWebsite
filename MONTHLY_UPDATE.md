@@ -1,27 +1,17 @@
 # Monthly Update Checklist (do this at the start of each month)
 
-A couple of things on the site change every month. Walk this short list at the
-start of each month. All changes are in **`index.html`**.
+The calendar of activities is the one thing on the site that's worth refreshing
+through the year. All changes are in **`index.html`**.
 
 > Tip: line numbers shift as the file changes. Each item gives a **search string**
 > you can paste into your editor's "Find" (Cmd+F) to jump straight to the spot.
 >
-> For the once-a-year items (Come, Follow Me link, playlist, song list), see
+> For the once-a-year items (Come, Follow Me link, playlists, song list), see
 > **`YEARLY_UPDATE.md`** instead.
 
 ---
 
-## 1. "Singing This Month" / "Coming Up" cards
-
-Search: `month-card__title` (~lines 140 & 145)
-
-Two cards name the **current month** and the **next month** (e.g. "June Songs" /
-"July Songs"). Update both so the first card is this month and the second is next
-month. In December, the "Coming Up" card rolls over to "January Songs".
-
----
-
-## 2. Calendar / Upcoming Activities
+## Calendar / Upcoming Activities
 
 Search: `class="events"` (~line 62), then the `<li class="event …">` blocks.
 
@@ -56,5 +46,4 @@ fields. To verify, open `index.html` in a browser and check the calendar section
 
 | What | File | Search string |
 |------|------|---------------|
-| This/next month song cards | index.html | `month-card__title` |
-| Calendar events            | index.html | `class="events"` |
+| Calendar events | index.html | `class="events"` |

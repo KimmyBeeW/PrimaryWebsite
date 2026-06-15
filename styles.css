@@ -270,14 +270,14 @@ a { color: var(--terracotta); }
 .music-cta__sub { font-size: 0.85rem; color: rgba(255,255,255,0.92); }
 .music-cta__arrow { font-size: 1.5rem; color: #fff; }
 
-/* ============================= MONTH CARDS ============================= */
-.month-cards {
+/* ============================= CASUAL LISTENING ============================= */
+.casual-listening {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
   margin-bottom: 2.25rem;
 }
-.month-card {
+.casual-listening__card {
   text-decoration: none;
   border-radius: var(--radius);
   padding: 1.4rem 1.5rem;
@@ -288,18 +288,18 @@ a { color: var(--terracotta); }
   transition: transform 0.15s ease;
   color: var(--ink);
 }
-.month-card:hover { transform: translateY(-3px); }
-.month-card--now  { background: var(--yellow-soft); border: 2px solid var(--yellow); }
-.month-card--next { background: var(--sky-soft);    border: 2px solid var(--sky); }
-.month-card__label {
+.casual-listening__card:hover { transform: translateY(-3px); }
+.casual-listening__card--listen  { background: var(--yellow-soft); border: 2px solid var(--yellow); }
+.casual-listening__card--explore { background: var(--sky-soft);    border: 2px solid var(--sky); }
+.casual-listening__label {
   font-family: var(--font-head);
   font-size: 0.78rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-.month-card__title { font-family: var(--font-head); font-size: 1.5rem; font-weight: 600; }
-.month-card__hint { font-size: 0.9rem; color: var(--terracotta); }
+.casual-listening__title { font-family: var(--font-head); font-size: 1.5rem; font-weight: 600; }
+.casual-listening__hint { font-size: 0.9rem; color: var(--terracotta); }
 
 /* ============================= SHEET MUSIC ============================= */
 .sheet-music { margin-top: 1rem; }
@@ -473,6 +473,9 @@ a { color: var(--terracotta); }
 .footer__inner { max-width: 640px; margin: 0 auto; }
 .footer__meeting { font-family: var(--font-head); margin: 0 0 1rem; line-height: 1.7; }
 .footer__meeting strong { color: var(--yellow-soft); }
+/* Match the address link's underline to its text color (was the default
+   terracotta, which read as a red underline against the dark footer). */
+.footer__meeting a { color: var(--yellow-soft); }
 .footer__disclaimer {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.85);

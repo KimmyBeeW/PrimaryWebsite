@@ -4,9 +4,8 @@ This site has a handful of things baked in for the current year. Every January,
 walk this list top to bottom and update each item. All changes are in
 **`index.html`** unless noted.
 
-> For things that change every *month* (the "Singing This Month" cards and the
-> calendar of activities), see **`MONTHLY_UPDATE.md`**. In January, do that list
-> too so you start the year clean.
+> For the calendar of activities (which is worth refreshing through the year),
+> see **`MONTHLY_UPDATE.md`**. In January, do that list too so you start clean.
 
 > Tip: line numbers below are approximate — they shift as the file changes. Each
 > item also gives a **search string** you can paste into your editor's "Find"
@@ -49,13 +48,20 @@ the URL should match the current week on the church's site.
 
 ---
 
-## 2. Primary Program playlist
+## 2. Playlists (two of them)
 
-Search: `music-cta` (~line 127) and `Primary Program songs` (~line 131)
+**a) Primary Program playlist** — search: `music-cta` and `Primary Program songs`
 
-- **`href`** on the `music-cta` link (line 127): paste the new year's Primary
-  Program playlist URL from churchofjesuschrist.org → Media → Music → Playlists.
-- **Subtitle text** (line 131): change `2026 Primary Program songs` to the new year.
+- **`href`** on the `music-cta` link: paste the new year's Primary Program
+  playlist URL from churchofjesuschrist.org → Media → Music → Playlists.
+- **Subtitle text**: change `2026 Primary Program songs` to the new year.
+
+**b) "All 2026 Songs" casual-listening playlist** — search: `casual-listening__card--listen`
+
+- **`href`** on that link: paste the new year's "all songs" playlist URL.
+- **Title text**: change `All 2026 Songs` (the `casual-listening__title`) to the new year.
+- The second card ("Church Music Library" / Explore) is **not** year-specific —
+  leave it alone.
 
 ---
 
@@ -74,10 +80,10 @@ copy the page URL.
 
 ---
 
-## 4. Don't forget the monthly items
+## 4. Don't forget the calendar
 
-The "Singing This Month" cards and the calendar of activities also need a reset to
-start the year. Those live in **`MONTHLY_UPDATE.md`** — run that list in January too.
+The calendar of activities also needs a reset to start the year. It lives in
+**`MONTHLY_UPDATE.md`** — run that list in January too.
 
 ---
 
@@ -85,11 +91,12 @@ start the year. Those live in **`MONTHLY_UPDATE.md`** — run that list in Janua
 
 | What | File | Search string |
 |------|------|---------------|
-| CFM default link (URL + week) | index.html | `id="cfm-link"` |
-| CFM script anchor/settings    | index.html | `ANCHOR_WEEK` |
-| Playlist URL                  | index.html | `music-cta` |
-| Playlist subtitle year        | index.html | `Primary Program songs` |
-| 12 months of songs            | index.html | `sheet-music__heading` |
+| CFM default link (URL + week)   | index.html | `id="cfm-link"` |
+| CFM script anchor/settings      | index.html | `ANCHOR_WEEK` |
+| Primary Program playlist URL    | index.html | `music-cta` |
+| Primary Program subtitle year   | index.html | `Primary Program songs` |
+| "All 20XX Songs" playlist + title | index.html | `casual-listening__card--listen` |
+| 12 months of songs              | index.html | `sheet-music__heading` |
 
 ---
 

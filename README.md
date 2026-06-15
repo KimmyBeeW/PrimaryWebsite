@@ -25,8 +25,9 @@ title, time, location, and description. Use the matching color class:
 
 (Remember to also change the `event__tag--*` class on the tag inside.)
 
-**Update the "this month / next month" songs** — Edit the two cards in the
-`<div class="month-cards">` block (the `month-card__title` text).
+**Casual-listening buttons** — The two cards in the `<div class="casual-listening">`
+block link to the year's playlist and the Church Music Library. The playlist link
+and "All 20XX Songs" title are year-specific (see `YEARLY_UPDATE.md`).
 
 **Add leader names** — In the "Meet Your Leaders" section, replace each
 `[Name]` placeholder. To add real photos, swap the `<div class="leader__photo">`
