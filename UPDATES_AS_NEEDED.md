@@ -1,4 +1,4 @@
-# Monthly Update Checklist (do this at the start of each month)
+# As Needed Update Checklist (do this whenever activities get added to the calendar)
 
 The calendar of activities is the one thing on the site that's worth refreshing
 through the year. All changes are in **`index.html`**.
@@ -15,11 +15,11 @@ through the year. All changes are in **`index.html`**.
 
 Search: `class="events"` (~line 62), then the `<li class="event …">` blocks.
 
-These are specific dated activities (e.g. "JUN 15 — Primary Program Rehearsal").
-Each month:
+These are specific dated activities (e.g. "JUN 21 — Father's Day Performance").
+As needed:
 
 - **Remove** events that have already passed.
-- **Add** the new month's activities.
+- **Add** the new activities, rehearsals, and performances.
 
 Each event block has these fields to fill in:
 

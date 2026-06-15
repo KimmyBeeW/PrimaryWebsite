@@ -5,7 +5,7 @@ walk this list top to bottom and update each item. All changes are in
 **`index.html`** unless noted.
 
 > For the calendar of activities (which is worth refreshing through the year),
-> see **`MONTHLY_UPDATE.md`**. In January, do that list too so you start clean.
+> see **`UPDATES_AS_NEEDED.md`**. In January, do that list too so you start clean.
 
 > Tip: line numbers below are approximate — they shift as the file changes. Each
 > item also gives a **search string** you can paste into your editor's "Find"
@@ -83,7 +83,7 @@ copy the page URL.
 ## 4. Don't forget the calendar
 
 The calendar of activities also needs a reset to start the year. It lives in
-**`MONTHLY_UPDATE.md`** — run that list in January too.
+**`UPDATES_AS_NEEDED.md`** — run that list in January too.
 
 ---
 
