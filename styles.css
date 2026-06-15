@@ -75,16 +75,6 @@ a { color: var(--terracotta); }
 
 .hero__inner { max-width: 760px; margin: 0 auto; }
 
-.hero__badge {
-  font-size: 2.75rem;
-  background: var(--cream-card);
-  width: 84px; height: 84px;
-  line-height: 84px;
-  border-radius: 50%;
-  margin: 0 auto 1.25rem;
-  box-shadow: var(--shadow);
-}
-
 .hero__title {
   font-size: clamp(2.1rem, 5.5vw, 3.4rem);
   font-weight: 700;
