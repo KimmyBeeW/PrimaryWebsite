@@ -59,7 +59,15 @@ a { color: var(--terracotta); }
 .container {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  /* One even rhythm for the whole page: `gap` spaces every section (and the
+     art figures, which count as sections), and the matching vertical padding
+     spaces the first/last section from the hero and footer. Change --section-gap
+     in one place to retune all of it. */
+  --section-gap: 4rem;
+  padding: var(--section-gap) 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
 }
 
 /* ============================= HERO ============================= */
@@ -111,12 +119,13 @@ a { color: var(--terracotta); }
 .hero__nav a:hover { transform: translateY(-2px); background: var(--yellow-soft); }
 
 /* ============================= SECTIONS ============================= */
-.section { padding: 3.5rem 0; }
+/* No vertical padding/margin here — spacing between sections is handled by the
+   flex `gap` on .container so every gap stays even. */
+.section { padding: 0; }
 .section--music {
   background: var(--cream-card);
   border-radius: var(--radius-lg);
   padding: 3rem 1.5rem;
-  margin: 1rem 0;
   box-shadow: var(--shadow-soft);
 }
 
@@ -132,7 +141,9 @@ a { color: var(--terracotta); }
 }
 
 .section__art {
-  margin: 0 auto 1.75rem;
+  /* Vertical spacing comes from .container's flex gap; `auto` side margins just
+     keep the image centered. */
+  margin: 0 auto;
   width: 80%;
   height: auto;
   max-width: 800px;
@@ -513,7 +524,9 @@ a { color: var(--terracotta); }
   .callout__text { margin-inline: auto; }
   .music-cta { flex-wrap: wrap; margin-inline: 1rem; }
   .music-cta__arrow { display: none; }
-  .section { padding: 2.5rem 0; }
+
+  /* Tighten the even section rhythm a bit on small screens. */
+  .container { --section-gap: 2.75rem; }
 
   /* Once the month tiles drop to a single column, let the tile fill the
      available width with a small breathing-room margin. (A fixed-width cap
