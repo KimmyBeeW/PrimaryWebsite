@@ -70,8 +70,8 @@ a { color: var(--terracotta); }
     radial-gradient(circle at 50% 120%, var(--sage-soft) 0, transparent 55%),
     var(--cream);
   text-align: center;
-  padding: 4.5rem 1.25rem 4rem;
-  border-bottom: 3px solid var(--cream-card);
+  padding: 2.75rem 1.25rem 3.25rem;
+  /* border-bottom: 3px solid var(--cream-card); */
 }
 
 .hero__inner { max-width: 760px; margin: 0 auto; }
@@ -130,6 +130,28 @@ a { color: var(--terracotta); }
   margin: 0.5rem auto 0;
   max-width: 540px;
 }
+
+.section__art {
+  margin: 0 auto 1.75rem;
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+}
+.section__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 5px solid var(--cream-card);
+}
+.section__art-credit {
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+}
+.section__art-credit a { color: var(--ink-soft); }
 
 /* ============================= LEGEND ============================= */
 .legend {
