@@ -302,6 +302,36 @@
       </div>
     </section>
 
+  <!-- Update the "Come, Follow Me" link to the current week automatically -->
+  <script>
+    (function () {
+      // Anchor: Come, Follow Me week 24 runs Mon June 8 – Sun June 14, 2026.
+      // Weeks run Monday through Sunday. Using the Monday that starts week 24
+      // lets us figure out any week number from today's date.
+      var ANCHOR_WEEK = 24;
+      var anchorMonday = new Date(2026, 5, 8); // June 8, 2026 (month is 0-indexed)
+      var TOTAL_WEEKS = 52; // 2026 Old Testament manual has 52 weekly lessons
+      var BASE_URL =
+        "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/";
+
+      // Today at local midnight, so the time of day doesn't affect the math.
+      var now = new Date();
+      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      var msPerDay = 24 * 60 * 60 * 1000;
+      var daysSinceAnchor = Math.round((today - anchorMonday) / msPerDay);
+      var weeksSinceAnchor = Math.floor(daysSinceAnchor / 7);
+      var week = ANCHOR_WEEK + weeksSinceAnchor;
+
+      var link = document.getElementById("cfm-link");
+      if (link && week >= 1 && week <= TOTAL_WEEKS) {
+        link.href = BASE_URL + week + "?lang=eng";
+      }
+      // If the date is outside the 2026 manual, the link keeps its default
+      // href (week 24) rather than pointing to a non-existent week.
+    })();
+  </script>
+
     <!-- ========================= LEADERS ========================= -->
     <section id="leaders" class="section" aria-labelledby="leaders-heading">
       <div class="section__head">
@@ -382,45 +412,18 @@
       </p>
       <img class="footer__art" src="images/Jesus-w-kids.png" alt="A painting of Jesus Christ with children." loading="lazy" />
       <p class="footer__disclaimer">
-        This is an unofficial local ward resource intended solely for
+        This is an <strong>unofficial</strong> local ward resource intended solely for
         communication with ward families.
       </p>
       <p class="footer__disclaimer">
-        It is not an official publication of
-        The Church of Jesus Christ of Latter-day Saints.
+        It is <strong>not</strong> an official publication of
+        <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-day Saints</a>.
+      </p>
+      <p class="footer__disclaimer">
+        © 2026 by Kimberly Williams
       </p>
     </div>
   </footer>
-
-  <!-- Update the "Come, Follow Me" link to the current week automatically -->
-  <script>
-    (function () {
-      // Anchor: Come, Follow Me week 24 runs Mon June 8 – Sun June 14, 2026.
-      // Weeks run Monday through Sunday. Using the Monday that starts week 24
-      // lets us figure out any week number from today's date.
-      var ANCHOR_WEEK = 24;
-      var anchorMonday = new Date(2026, 5, 8); // June 8, 2026 (month is 0-indexed)
-      var TOTAL_WEEKS = 52; // 2026 Old Testament manual has 52 weekly lessons
-      var BASE_URL =
-        "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/";
-
-      // Today at local midnight, so the time of day doesn't affect the math.
-      var now = new Date();
-      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-      var msPerDay = 24 * 60 * 60 * 1000;
-      var daysSinceAnchor = Math.round((today - anchorMonday) / msPerDay);
-      var weeksSinceAnchor = Math.floor(daysSinceAnchor / 7);
-      var week = ANCHOR_WEEK + weeksSinceAnchor;
-
-      var link = document.getElementById("cfm-link");
-      if (link && week >= 1 && week <= TOTAL_WEEKS) {
-        link.href = BASE_URL + week + "?lang=eng";
-      }
-      // If the date is outside the 2026 manual, the link keeps its default
-      // href (week 24) rather than pointing to a non-existent week.
-    })();
-  </script>
 
 </body>
 </html>

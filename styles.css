@@ -20,6 +20,7 @@
   /* Text */
   --ink:          #4a4540;
   --ink-soft:     #7a736a;
+  --disclaimer-txt:   rgba(255,255,255,0.85);
 
   /* UI */
   --radius:       18px;
@@ -478,10 +479,11 @@ a { color: var(--terracotta); }
 .footer__meeting a { color: var(--yellow-soft); }
 .footer__disclaimer {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
+  color: var(--disclaimer-txt);
   margin: 0;
   line-height: 1.6;
 }
+.footer__disclaimer a { color: var(--disclaimer-txt); }
 
 /* ============================= RESPONSIVE ============================= */
 @media (max-width: 560px) {
