@@ -185,7 +185,8 @@ a { color: var(--terracotta); }
 }
 .legend__dot--sunday  { background: var(--sage); }
 .legend__dot--weekday { background: var(--sky); }
-.legend__dot--special { background: var(--terracotta); }
+.legend__dot--special { background: var(--yellow); }
+.legend__dot--ward    { background: var(--terracotta); }
 
 /* ============================= EVENTS ============================= */
 .events {
@@ -211,7 +212,8 @@ a { color: var(--terracotta); }
 
 .event--sunday  { border-left-color: var(--sage); }
 .event--weekday { border-left-color: var(--sky); }
-.event--special { border-left-color: var(--terracotta); }
+.event--special { border-left-color: var(--yellow); }
+.event--ward    { border-left-color: var(--terracotta); }
 
 .event__date {
   flex: 0 0 auto;
@@ -225,7 +227,8 @@ a { color: var(--terracotta); }
 }
 .event--sunday  .event__date { background: var(--sage-soft); }
 .event--weekday .event__date { background: var(--sky-soft); }
-.event--special .event__date { background: var(--terracotta-soft); }
+.event--special .event__date { background: var(--yellow-soft); }
+.event--ward    .event__date { background: var(--terracotta-soft); }
 
 .event__month {
   display: block;
@@ -255,7 +258,9 @@ a { color: var(--terracotta); }
 }
 .event__tag--sunday  { background: var(--sage); }
 .event__tag--weekday { background: var(--sky); }
-.event__tag--special { background: var(--terracotta); }
+/* Yellow is light, so use dark text on the special pill for legible contrast. */
+.event__tag--special { background: var(--yellow); color: var(--ink); }
+.event__tag--ward    { background: var(--terracotta); }
 
 .event__title { font-size: 1.2rem; margin-bottom: 0.25rem; }
 .event__meta { margin: 0 0 0.4rem; font-size: 0.9rem; color: var(--ink-soft); }
