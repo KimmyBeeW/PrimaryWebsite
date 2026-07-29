@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cherry Hill 9th Ward Primary</title>
+  <meta name="description" content="A central hub for parents with Cherry Hill 9th Ward Primary activities, music, lessons, and leadership information." />
+
+  <!-- Link preview (Open Graph + Twitter). This controls the image and text
+       shown when the link is shared in Messages, Facebook, etc. Without it,
+       previews guess at an image and may grab a profile photo. The image URL
+       MUST be absolute (full https://…). If you ever move the site to a custom
+       domain, update the two image URLs and og:url below to match. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cherry Hill 9th Ward Primary" />
+  <meta property="og:description" content="Activities, music, weekly lessons, and leaders for the Cherry Hill 9th Ward Primary." />
+  <meta property="og:url" content="https://kimmybeew.github.io/PrimaryWebsite/" />
+  <meta property="og:image" content="https://kimmybeew.github.io/PrimaryWebsite/images/Jesus-w-kids.png" />
+  <meta property="og:image:alt" content="A painting of Jesus Christ with children." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cherry Hill 9th Ward Primary" />
+  <meta name="twitter:description" content="Activities, music, weekly lessons, and leaders for the Cherry Hill 9th Ward Primary." />
+  <meta name="twitter:image" content="https://kimmybeew.github.io/PrimaryWebsite/images/Jesus-w-kids.png" />
+
+  <!-- Friendly rounded sans-serif for headings + readable serif for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================= HERO ============================= -->
+  <header class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__title">Cherry Hill 9th Ward Primary</h1>
+      <p class="hero__subtitle">
+        Welcome! This is your one-stop spot for the whats-what in the 9th ward Primary.
+      </p>
+      <nav class="hero__nav" aria-label="Section navigation">
+        <a href="#calendar">Activities</a>
+        <a href="#music">Music</a>
+        <a href="#lesson">Come, Follow Me</a>
+        <a href="#leaders">Leaders</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ========================= CALENDAR ========================= -->
+    <section id="calendar" class="section" aria-labelledby="calendar-heading">
+      <div class="section__head">
+        <h2 id="calendar-heading" class="section__title">Upcoming Activities &amp Performances</h2>
+        <p class="section__lede">Here's what's coming up for our Primary. Check out our <a href="https://local.churchofjesuschrist.org/en/units/us/ut/cherry-hill-9th-ward">ward website</a> for other events.</p>
+      </div>
+
+      <!-- Color legend -->
+      <ul class="legend" aria-label="Event color key">
+        <li class="legend__item">
+          <span class="legend__dot legend__dot--sunday"></span>
+          Sunday
+        </li>
+        <li class="legend__item">
+          <span class="legend__dot legend__dot--weekday"></span>
+          Activities
+        </li>
+        <li class="legend__item">
+          <span class="legend__dot legend__dot--special"></span>
+          Special
+        </li>
+        <li class="legend__item">
+          <span class="legend__dot legend__dot--ward"></span>
+          Ward-Wide Event
+        </li>
+      </ul>
+
+      <!-- Event cards. Duplicate a <li> and edit the placeholders to add events. -->
+      <ul class="events">
+
+        <li class="event event--special">
+          <div class="event__date">
+            <span class="event__month">JAN</span>
+            <span class="event__day">01</span>
+          </div>
+          <div class="event__body">
+            <span class="event__tag event__tag--special">Friday</span>
+            <h3 class="event__title">New Year's Day</h3>
+            <p class="event__meta">🕙 Midnight &middot; 📍 World</p>
+            <p class="event__desc">Happy New Year!</p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ========================= ART 1 ========================== -->
+      <figure class="section__art">
+        <img src="images/go00159.jpg" alt="'Take My Hand' by Greg Olsen (2008). A painting of Jesus holding a child's hand as they walk down a grassy forest path by a stream, both looking with wonder at a small chipmunk on a rock." fetchpriority="high" />
+        <figcaption class="section__art-credit">
+          <a href="https://gregolsen.com/customize/?i=go00159" target="_blank" rel="noopener">“Take My Hand” by Greg Olsen</a>
+        </figcaption>
+      </figure>
+
+    <!-- ========================= MUSIC ========================= -->
+    <section id="music" class="section section--music" aria-labelledby="music-heading">
+      <div class="section__head">
+        <h2 id="music-heading" class="section__title">Singing Time</h2>
+        <p class="section__lede">Practicing at home can help songs stick!</p>
+      </div>
+
+      <!-- Featured playlist button -->
+      <a class="music-cta" href="https://www.churchofjesuschrist.org/media/music/playlists/-JL0KJd1EVd02xZ6xTlSpwFaY04KenIYjxWjvoHLE52dJQrp8gI0V8lb_lZ-sWwImAZlcqW7uJTzdr29l3OadGxXLgiLbbmPyRlDP6LjlpI" target="_blank" rel="noopener">
+        <span class="music-cta__icon" aria-hidden="true">🎵</span>
+        <span class="music-cta__text">
+          <span class="music-cta__title">Listen to Our Primary Program Playlist (Not updated yet, but coming soon!)</span>
+          <span class="music-cta__sub">2027 Primary Program songs &middot; currently only available on the Gospel Library app</span>
+        </span>
+        <span class="music-cta__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- Casual listening -->
+      <div class="casual-listening">
+        <a class="casual-listening__card casual-listening__card--listen" href="https://www.churchofjesuschrist.org/media/music/playlists/JwuygNSni-hooBy-9De3LoZeIOgOFpoZvS6gIgFMNXKYhjVxCzI5UgxONsYracxWulPwhie7flSKd0Djac90T1ZdqozIQwEGvDSmf4NTvTE" target="_blank" rel="noopener">
+          <span class="casual-listening__label">🎵 Casual Listening</span>
+          <span class="casual-listening__title">All 2027 Songs Playlist</span>
+          <span class="casual-listening__hint">View all the songs recommended this year from Come, Follow Me →</span>
+        </a>
+        <a class="casual-listening__card casual-listening__card--explore" href="https://www.churchofjesuschrist.org/study/music?lang=eng" target="_blank" rel="noopener">
+          <span class="casual-listening__label">🎵 Explore</span>
+          <span class="casual-listening__title">Church Music Library</span>
+          <span class="casual-listening__hint">Explore and listen to the church's wide array of music. →</span>
+        </a>
+      </div>
+
+<!-- Sheet music list -->
+      <div id="sheet-music" class="sheet-music">
+        <h3 class="sheet-music__heading">This Year's Songs</h3>
+        <p class="sheet-music__note">Each link opens the official lyrics or sheet music on churchofjesuschrist.org.</p>
+
+        <div class="months">
+
+          <article class="month-block">
+            <h4 class="month-block__name">January</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/a-childs-prayer" target="_blank" rel="noopener">A Child’s Prayer <span class="song-list__ref">Children's Songbook, 12–13</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/jesus-once-was-a-little-child" target="_blank" rel="noopener">Jesus Once Was a Little Child <span class="song-list__ref">Children's Songbook, 55</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/baptism" target="_blank" rel="noopener">Baptism <span class="song-list__ref">Children's Songbook, 100–101</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">February</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/this-little-light-of-mine" target="_blank" rel="noopener">This Little Light of Mine <span class="song-list__ref">Hymns—For Home and Church, no. 1028</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/the-wise-man-and-the-foolish-man" target="_blank" rel="noopener">The Wise Man and the Foolish Man <span class="song-list__ref">Children's Songbook, 281</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/the-miracle" target="_blank" rel="noopener">The Miracle <span class="song-list__ref">Hymns—For Home and Church, no. 1070</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">March</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/his-eye-is-on-the-sparrow" target="_blank" rel="noopener">His Eye Is on the Sparrow <span class="song-list__ref">Hymns—For Home and Church, no. 1005</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/he-cares-for-me" target="_blank" rel="noopener">He Cares for Me <span class="song-list__ref">Hymns—For Home and Church, no. 1047</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/easter-hosanna" target="_blank" rel="noopener">Easter Hosanna <span class="song-list__ref">Children's Songbook, 68–69</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">April</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/holy-places" target="_blank" rel="noopener">Holy Places <span class="song-list__ref">Hymns—For Home and Church, no. 1026</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/hymns/have-i-done-any-good" target="_blank" rel="noopener">Have I Done Any Good? <span class="song-list__ref">Hymns, no. 223</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/keep-the-commandments" target="_blank" rel="noopener">Keep the Commandments <span class="song-list__ref">Children's Songbook, 146–47</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">May</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple" target="_blank" rel="noopener">I Love to See the Temple <span class="song-list__ref">Children's Songbook, 95</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/families-can-be-together-forever" target="_blank" rel="noopener">Families Can Be Together Forever <span class="song-list__ref">Children's Songbook, 188–89</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/love-one-another" target="_blank" rel="noopener">Love One Another <span class="song-list__ref">Children's Songbook, 136–37</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">June</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/the-holy-ghost" target="_blank" rel="noopener">The Holy Ghost <span class="song-list__ref">Children's Songbook, 105</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/he-sent-his-son" target="_blank" rel="noopener">He Sent His Son <span class="song-list__ref">Children's Songbook, 34–35</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/gethsemane" target="_blank" rel="noopener">Gethsemane <span class="song-list__ref">Hymns—For Home and Church, no. 1009</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">July</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/stand-for-the-right" target="_blank" rel="noopener">Stand for the Right <span class="song-list__ref">Children's Songbook, 159</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/holding-hands-around-the-world" target="_blank" rel="noopener">Holding Hands Around the World <span class="song-list__ref">Hymns—For Home and Church, no. 1011</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-know-my-father-lives" target="_blank" rel="noopener">I Know My Father Lives <span class="song-list__ref">Children's Songbook, 5</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">August</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/standing-on-the-promises" target="_blank" rel="noopener">Standing on the Promises <span class="song-list__ref">Hymns—For Home and Church, no. 1023</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-will-follow-gods-plan" target="_blank" rel="noopener">I Will Follow God's Plan <span class="song-list__ref">Children's Songbook, 164–65</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/jesus-said-love-everyone" target="_blank" rel="noopener">Jesus Said Love Everyone <span class="song-list__ref">Children's Songbook, 61</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">September</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/did-jesus-really-live-again" target="_blank" rel="noopener">Did Jesus Really Live Again? <span class="song-list__ref">Children's Songbook, 64</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-feel-my-saviors-love" target="_blank" rel="noopener">I Feel My Savior's Love <span class="song-list__ref">Children's Songbook, 74–75</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/teach-me-to-walk-in-the-light" target="_blank" rel="noopener">Teach Me to Walk in the Light <span class="song-list__ref">Children's Songbook, 177</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">October</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/the-church-of-jesus-christ" target="_blank" rel="noopener">The Church of Jesus Christ <span class="song-list__ref">Children's Songbook, 77</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/beautiful-savior-crusaders-hymn" target="_blank" rel="noopener">Beautiful Savior <span class="song-list__ref">Children's Songbook, 62–63</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/i-have-faith-in-the-lord-jesus-christ" target="_blank" rel="noopener">I Have Faith in the Lord Jesus Christ <span class="song-list__ref">Hymns—For Home and Church, no. 1024</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">November</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/faith" target="_blank" rel="noopener">Faith <span class="song-list__ref">Children's Songbook, 96–97</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/where-love-is" target="_blank" rel="noopener">Where Love Is <span class="song-list__ref">Children's Songbook, 138–39</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/im-gonna-live-so-god-can-use-me" target="_blank" rel="noopener">I'm Gonna Live So God Can Use Me <span class="song-list__ref">Hymns—For Home and Church, no. 1037</span></a></li>
+            </ul>
+          </article>
+
+          <article class="month-block">
+            <h4 class="month-block__name">December</h4>
+            <ul class="song-list">
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/marys-lullaby" target="_blank" rel="noopener">Mary's Lullaby <span class="song-list__ref">Children's Songbook, 44–45</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/music/hymns-for-home-and-church/when-the-savior-comes-again" target="_blank" rel="noopener">When the Savior Comes Again <span class="song-list__ref">Hymns—For Home and Church, no. 1002</span></a></li>
+              <li><a href="https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-lived-in-heaven" target="_blank" rel="noopener">I Lived in Heaven <span class="song-list__ref">Children's Songbook, 4</span></a></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= ART 2 ========================== -->
+      <figure class="section__art">
+        <img src="images/go00091.jpg" alt="“In His Light” by Greg Olsen. A painting of Jesus wrapping his arm around the shoulders of a little kid." fetchpriority="high" />
+        <figcaption class="section__art-credit">
+          <a href="https://gregolsen.com/customize/?i=go00091" target="_blank" rel="noopener">“In His Light” by Greg Olsen</a>
+        </figcaption>
+      </figure>
+
+    <!-- ====================== COME, FOLLOW ME ====================== -->
+    <section id="lesson" class="section" aria-labelledby="lesson-heading">
+      <div class="callout">
+        <div class="callout__icon" aria-hidden="true">📖</div>
+        <div class="callout__body">
+          <h2 id="lesson-heading" class="callout__title">This Week's Gospel Study</h2>
+          <p class="callout__text">
+            Follow along with the family at home. Tap below for the current
+            <em>Come, Follow Me</em> lesson on the official Church website.
+          </p>
+          <a id="cfm-link" class="btn btn--primary" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-new-testament-2027/01?lang=eng" target="_blank" rel="noopener">
+            This Week's "Come, Follow Me" Lesson →
+          </a>
+          <a class="btn btn--secondary" href="https://www.churchofjesuschrist.org/study/come-follow-me?lang=eng" target="_blank" rel="noopener">
+            Come, Follow Me Resources →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <!-- Update the "Come, Follow Me" link to the current week automatically -->
+  <script>
+    (function () {
+      // Anchor: Come, Follow Me week 01 runs Mon December 28 – Sun January 3, 2027.
+      // Weeks run Monday through Sunday. Using the Monday that starts week 01
+      // lets us figure out any week number from the start date.
+      var ANCHOR_WEEK = 0o1;
+      var anchorMonday = new Date(2026, 11, 28); // December 28, 2026 (month is 0-indexed)
+      var TOTAL_WEEKS = 52; // 2027 New Testament manual has 52 weekly lessons
+      var BASE_URL =
+        "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-new-testament-2027/";
+
+      // Today at local midnight, so the time of day doesn't affect the math.
+      var now = new Date();
+      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+      var msPerDay = 24 * 60 * 60 * 1000;
+      var daysSinceAnchor = Math.round((today - anchorMonday) / msPerDay);
+      var weeksSinceAnchor = Math.floor(daysSinceAnchor / 7);
+      var week = ANCHOR_WEEK + weeksSinceAnchor;
+
+      var link = document.getElementById("cfm-link");
+      if (link && week >= 1 && week <= TOTAL_WEEKS) {
+        link.href = BASE_URL + week + "?lang=eng";
+      }
+      // If the date is outside the 2027 manual, the link keeps its default
+      // href (week 01) rather than pointing to a non-existent week.
+    })();
+  </script>
+
+    <!-- ========================= LEADERS ========================= -->
+    <section id="leaders" class="section" aria-labelledby="leaders-heading">
+      <div class="section__head">
+        <h2 id="leaders-heading" class="section__title">Meet Your Leaders</h2>
+        <p class="section__lede">We love your kids and are here to help them feel God's love!</p>
+        <p class="section__lede">Let us know if you have any questions.</p>
+      </div>
+
+      <div class="leaders">
+
+        <figure class="leader">
+          <div class="leader__photo">
+            <img class="leader__photo-img--zoom-leber" src="images/GailLeber.jpeg" alt="Gail Leber" loading="lazy" />
+          </div>
+          <figcaption class="leader__caption">
+            <span class="leader__name">Gail Leber</span>
+            <span class="leader__role">Primary President</span>
+          </figcaption>
+        </figure>
+
+        <figure class="leader">
+          <div class="leader__photo">
+            <img class="leader__photo-img--zoom-ashton" src="images/AmandaAshton.jpeg" alt="Amanda Ashton" loading="lazy" />
+          </div>
+          <figcaption class="leader__caption">
+            <span class="leader__name">Amanda Ashton</span>
+            <span class="leader__role">Primary First Counselor</span>
+          </figcaption>
+        </figure>
+
+        <figure class="leader">
+          <div class="leader__photo">
+            <img class="leader__photo-img--zoom-nitta" src="images/KelliNitta.jpeg" alt="Kelli Nitta" loading="lazy" />
+          </div>
+          <figcaption class="leader__caption">
+            <span class="leader__name">Kelli Nitta</span>
+            <span class="leader__role">Primary Second Counselor</span>
+          </figcaption>
+        </figure>
+
+        <figure class="leader">
+          <div class="leader__photo">
+            <img class="leader__photo-img--zoom-hatch" src="images/AlexHatch.jpeg" alt="Alex Hatch" loading="lazy" />
+          </div>
+          <figcaption class="leader__caption">
+            <span class="leader__name">Alex Hatch</span>
+            <span class="leader__role">Primary Secretary</span>
+          </figcaption>
+        </figure>
+
+        <figure class="leader">
+          <div class="leader__photo">
+            <img class="leader__photo-img--zoom-williams" src="images/KimmyWilliams.png" alt="Kimmy Williams" loading="lazy" />
+          </div>
+          <figcaption class="leader__caption">
+            <span class="leader__name">Kimmy Williams</span>
+            <span class="leader__role">Primary Music Leader</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="contact-note">
+        📞 To contact a member of the presidency or the music leader, please look
+        up our details directly in the <strong>Church Tools</strong> app or the online 
+        <a href="https://directory.churchofjesuschrist.org/234648">Ward Directory</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__meeting">
+        Join us Sundays at ⛪ <a href="https://local.churchofjesuschrist.org/en/us/ut/orem/135-east-2000-south"><strong>135 E 2000 S St, Orem, UT 84058</strong></a><br />
+        Sacrament meeting begins at <strong>10:30 AM</strong> &middot; Primary at <strong>11:35 AM</strong>
+      </p>
+      <img class="footer__art" src="images/Jesus-w-kids.png" alt="A painting of Jesus Christ with children." loading="lazy" />
+      <p class="footer__disclaimer">
+        This is an <strong>unofficial</strong> local ward resource intended solely for
+        communication with ward families.
+      </p>
+      <p class="footer__disclaimer">
+        It is <strong>not</strong> an official publication of
+        <a href="https://www.churchofjesuschrist.org/?lang=eng">The Church of Jesus Christ of Latter-day Saints</a>.
+      </p>
+      <p class="footer__disclaimer">
+        © 2027 by Kimberly Williams
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
