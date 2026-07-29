@@ -9,16 +9,21 @@
 
     var buttons = Array.prototype.slice.call(legend.querySelectorAll(".legend__btn"));
     var cards = Array.prototype.slice.call(eventsList.querySelectorAll(".event"));
+    var emptyMsg = document.querySelector(".events-empty");
     var active = null; // the category currently filtered to, or null for "show all"
 
     function apply() {
+      var anyVisible = false;
       cards.forEach(function (card) {
         var show = !active || card.classList.contains("event--" + active);
         card.classList.toggle("is-hidden", !show);
+        if (show) anyVisible = true;
       });
       buttons.forEach(function (btn) {
         btn.setAttribute("aria-pressed", btn.dataset.filter === active ? "true" : "false");
       });
+      // Show the "no events" note only when a filter is active and nothing matches.
+      if (emptyMsg) emptyMsg.hidden = !(active && !anyVisible);
     }
 
     buttons.forEach(function (btn) {
