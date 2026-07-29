@@ -56,25 +56,34 @@
         <p class="section__lede">Here's what's coming up for our Primary. Check out our <a href="https://local.churchofjesuschrist.org/en/units/us/ut/cherry-hill-9th-ward">ward website</a> for other events.</p>
       </div>
 
-      <!-- Color legend -->
-      <ul class="legend" aria-label="Event color key">
+      <!-- Color legend — click a color to filter events by type -->
+      <ul class="legend" aria-label="Filter events by type">
         <li class="legend__item">
-          <span class="legend__dot legend__dot--sunday"></span>
-          Sunday
+          <button class="legend__btn" type="button" data-filter="sunday" aria-pressed="false">
+            <span class="legend__dot legend__dot--sunday"></span>
+            Sunday
+          </button>
         </li>
         <li class="legend__item">
-          <span class="legend__dot legend__dot--weekday"></span>
-          Activities
+          <button class="legend__btn" type="button" data-filter="weekday" aria-pressed="false">
+            <span class="legend__dot legend__dot--weekday"></span>
+            Activities
+          </button>
         </li>
         <li class="legend__item">
-          <span class="legend__dot legend__dot--special"></span>
-          Special
+          <button class="legend__btn" type="button" data-filter="special" aria-pressed="false">
+            <span class="legend__dot legend__dot--special"></span>
+            Special
+          </button>
         </li>
         <li class="legend__item">
-          <span class="legend__dot legend__dot--ward"></span>
-          Ward-Wide Event
+          <button class="legend__btn" type="button" data-filter="ward" aria-pressed="false">
+            <span class="legend__dot legend__dot--ward"></span>
+            Ward-Wide Event
+          </button>
         </li>
       </ul>
+      <p class="legend__hint">Select a color to filter events — select it again to show all.</p>
 
       <!-- Event cards. Duplicate a <li> and edit the placeholders to add events. -->
       <ul class="events">
@@ -506,6 +515,9 @@
       </p>
     </div>
   </footer>
+
+  <!-- Legend click-to-filter for the events calendar -->
+  <script src="events-filter.js"></script>
 
 </body>
 </html>

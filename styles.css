@@ -173,12 +173,40 @@ a { color: var(--terracotta); }
   justify-content: center;
   gap: 1rem 1.75rem;
   padding: 0;
-  margin: 0 0 2rem;
+  margin: 0 0 0.6rem;
   font-family: var(--font-head);
   font-size: 0.92rem;
   color: var(--ink-soft);
 }
-.legend__item { display: flex; align-items: center; gap: 0.5rem; }
+.legend__item { display: flex; }
+/* The legend items are buttons that filter the events below. */
+.legend__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.legend__btn:hover { background: var(--cream-card); }
+.legend__btn:active { transform: translateY(1px); }
+.legend__btn[aria-pressed="true"] {
+  background: var(--cream-card);
+  border-color: var(--ink-soft);
+  box-shadow: var(--shadow-soft);
+}
+.legend__hint {
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.75rem;
+}
 .legend__dot {
   width: 16px; height: 16px;
   border-radius: 50%;
@@ -188,6 +216,8 @@ a { color: var(--terracotta); }
 .legend__dot--weekday { background: var(--sky); }
 .legend__dot--special { background: var(--yellow); }
 .legend__dot--ward    { background: var(--terracotta); }
+/* Events hidden by the legend filter. Two classes beats `.event { display: flex }`. */
+.event.is-hidden { display: none; }
 
 /* ============================= EVENTS ============================= */
 .events {
