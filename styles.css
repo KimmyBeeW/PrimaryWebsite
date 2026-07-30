@@ -20,8 +20,9 @@
   /* Text */
   --ink:          #4a4540;
   --ink-soft:     #7a736a;
-  --disclaimer-txt:   rgba(255,255,255,0.85);
-  --brown: #764335;
+  --brown:        #764335;
+  --white:        #fff;
+  --white-soft:   rgba(255,255,255,0.85);
 
   /* UI */
   --radius:       18px;
@@ -313,7 +314,7 @@ a { color: var(--terracotta); }
   gap: 1.1rem;
   text-decoration: none;
   color: var(--ink);
-  background: linear-gradient(135deg, var(--sky) 0%, var(--sage) 50%, var(--yellow-soft) 100%);
+  background: linear-gradient(135deg, var(--sky-soft) 0%, var(--sage-soft) 50%, var(--yellow-soft) 100%);
   border-radius: var(--radius);
   padding: 1.4rem 1.6rem;
   box-shadow: var(--shadow);
@@ -323,7 +324,7 @@ a { color: var(--terracotta); }
 .music-cta:hover { transform: translateY(-3px); }
 .music-cta__icon {
   font-size: 1.8rem;
-  background: rgba(255,255,255,0.85);
+  background: var(--white-soft);
   width: 56px; height: 56px;
   border-radius: 50%;
   display: grid; place-items: center;
@@ -333,11 +334,21 @@ a { color: var(--terracotta); }
 .music-cta__title {
   font-family: var(--font-head);
   font-weight: 600;
-  font-size: 1.2rem;
-  color: #fff;
+  font-size: 1.3rem;
 }
-.music-cta__sub { font-size: 0.85rem; color: rgba(255,255,255,0.92); }
-.music-cta__arrow { font-size: 1.75rem; color: #fff; }
+.music-cta__sub { 
+  font-family: var(--font-subhead); 
+  font-size: 1rem; 
+  color: var(--brown); 
+}
+.music-cta__arrow { 
+  font-family: var(--font-head); 
+  font-size: 1.5rem; 
+  color: var(--terracotta); 
+}
+/* Warm variant for the lyrics-slideshows button so it stands apart from the
+   playlist button while keeping white text legible across the whole gradient. */
+.music-cta--slides { background: linear-gradient(135deg, var(--terracotta-soft) 0%, var(--yellow-soft) 100%); }
 
 /* ============================= CASUAL LISTENING ============================= */
 .casual-listening {
@@ -566,11 +577,11 @@ a { color: var(--terracotta); }
 .footer__meeting a { color: var(--yellow-soft); }
 .footer__disclaimer {
   font-size: 0.85rem;
-  color: var(--disclaimer-txt);
+  color: var(--white-soft);
   margin: 0;
   line-height: 1.6;
 }
-.footer__disclaimer a { color: var(--disclaimer-txt); }
+.footer__disclaimer a { color: var(--white-soft); }
 
 /* ============================= RESPONSIVE ============================= */
 @media (max-width: 560px) {
