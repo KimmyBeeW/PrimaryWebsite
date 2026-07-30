@@ -13,38 +13,44 @@ walk this list top to bottom and update each item. All changes are in
 
 ---
 
-## 1. Come, Follow Me link + auto-week script ⭐ most important
+## 1. Come, Follow Me links (weekly + Fast-Sunday) ⭐ most important
 
-The site auto-advances the *Come, Follow Me* link to the correct week based on
-today's date, but the math is anchored to this year's calendar and manual, so it
-must be re-anchored each January.
+The site auto-advances the *Come, Follow Me* button to the current week (and, on
+pages that have one, the *Fast-Sunday* button to the current month). **All the
+logic lives in `scripts.js` — you never edit the logic**, you just point it at the
+new year in the spots below.
 
 The *Come, Follow Me* manual changes book every year on a 4-year rotation:
 2025 = Doctrine & Covenants · **2026 = Old Testament** · 2027 = New Testament ·
 2028 = Book of Mormon.
 
-**a) The default link** — search: `id="cfm-link"` (~line 267)
-Update the `href` to the new year's manual URL, with week `1` in it. The easiest
-way to get the new URL: go to the official *Come, Follow Me* page on
-churchofjesuschrist.org, open week 1, and copy the address.
+**a) The default button link (in the HTML page)** — search: `id="cfm-link"`
+Update its `href` to the new year's manual, week `1`
+(e.g. `.../come-follow-me-for-home-and-church-book-of-mormon-2028/01`). This link
+is *also how `scripts.js` figures out which year the page is*, so it must contain
+the correct 4-digit year.
 
-**b) The script's settings** — search: `ANCHOR_WEEK` (~lines 354–358)
-Update these four values:
+**b) Add the new year to `WEEK_CONFIG` (in `scripts.js`)** — search: `WEEK_CONFIG`
+Add one line for the new year, e.g.:
 
-| Variable        | What it is                                              | How to set it |
-|-----------------|---------------------------------------------------------|---------------|
-| `ANCHOR_WEEK`   | A known week number to anchor the math to               | Set to `1` |
-| `anchorMonday`  | The **Monday** that starts that anchor week             | `new Date(YEAR, MONTH, DAY)` — see note below |
-| `TOTAL_WEEKS`   | How many weekly lessons the new manual has              | Usually 52 (confirm on the church site) |
-| `BASE_URL`      | The manual URL **up to the final `/`** (no week number) | Copy from the new year's manual |
+```js
+"2028": { anchorMonday: "2027-12-27", totalWeeks: 52 },
+```
 
-⚠️ **`anchorMonday` gotcha:** the month is **0-indexed** in JavaScript
-(January = 0, February = 1, … December = 11). So Monday, January 5, 2026 would be
-`new Date(2026, 0, 5)`. Set this to the Monday that begins week 1 of the new year.
+- **`anchorMonday`** = the **Monday that starts week 1** of the new manual, written
+  as `"YYYY-MM-DD"`. To find it: open week 1 on the church site (it shows the date
+  range), or count back — it's usually the Monday of the week containing Jan 1.
+  *(No more 0-indexed-month gotcha — it's a plain text date now.)*
+- **`totalWeeks`** = number of weekly lessons (usually 52 — confirm on the site).
 
-**How to verify it works:** save the file, open `index.html` in a browser, and
-hover/click the "This Week's Come, Follow Me Lesson" button — the week number in
-the URL should match the current week on the church's site.
+**c) Fast-Sunday button (only on pages that have one)** — search: `id="fast-sun"`
+Update its default `href` to the new manual's Appendix B, first lesson. The 12
+monthly topics live in `scripts.js` as `FAST_SUNDAY_MONTHS`; they usually repeat
+each year, but double-check the appendix number and the slugs against the new manual.
+
+**How to verify it works:** open the page in a browser and hover/click the buttons —
+the week number (and Fast-Sunday month lesson) in the URL should match what's
+current on the church's site.
 
 ---
 
@@ -91,12 +97,14 @@ The calendar of activities also needs a reset to start the year. It lives in
 
 | What | File | Search string |
 |------|------|---------------|
-| CFM default link (URL + week)   | index.html | `id="cfm-link"` |
-| CFM script anchor/settings      | index.html | `ANCHOR_WEEK` |
-| Primary Program playlist URL    | index.html | `music-cta` |
-| Primary Program subtitle year   | index.html | `Primary Program songs` |
+| CFM default link (URL + week)   | index.html  | `id="cfm-link"` |
+| CFM year anchor + total weeks   | scripts.js  | `WEEK_CONFIG` |
+| Fast-Sunday default link        | (the page)  | `id="fast-sun"` |
+| Fast-Sunday month topics        | scripts.js  | `FAST_SUNDAY_MONTHS` |
+| Primary Program playlist URL    | index.html  | `music-cta` |
+| Primary Program subtitle year   | index.html  | `Primary Program songs` |
 | "All 20XX Songs" playlist + title | index.html | `casual-listening__card--listen` |
-| 12 months of songs              | index.html | `sheet-music__heading` |
+| 12 months of songs              | index.html  | `sheet-music__heading` |
 
 ---
 

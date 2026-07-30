@@ -375,68 +375,6 @@
       </div>
     </section>
 
-  <!-- Update the "Come, Follow Me" link to the current week automatically -->
-  <script>
-    (function () {
-      // Anchor: Come, Follow Me week 01 runs Mon December 28 – Sun January 3, 2027.
-      // Weeks run Monday through Sunday. Using the Monday that starts week 01
-      // lets us figure out any week number from the start date.
-      var ANCHOR_WEEK = 1;
-      var anchorMonday = new Date(2026, 11, 28); // December 28, 2026 (month is 0-indexed)
-      var TOTAL_WEEKS = 52; // 2027 New Testament manual has 52 weekly lessons
-      var BASE_URL =
-        "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-new-testament-2027/";
-
-      // Today at local midnight, so the time of day doesn't affect the math.
-      var now = new Date();
-      var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-      var msPerDay = 24 * 60 * 60 * 1000;
-      var daysSinceAnchor = Math.round((today - anchorMonday) / msPerDay);
-      var weeksSinceAnchor = Math.floor(daysSinceAnchor / 7);
-      var week = ANCHOR_WEEK + weeksSinceAnchor;
-
-      var link = document.getElementById("cfm-link");  // always needs to come after the cfm-link element is in the DOM
-      if (link && week >= 1 && week <= TOTAL_WEEKS) {
-        link.href = BASE_URL + week;
-      }
-      // If the date is outside the 2027 manual, the link keeps its default
-      // href (week 01) rather than pointing to a non-existent week.
-    })();
-  </script>
-
-  <!-- Update the "Fast-Sunday" link to the current month automatically -->
-  <script>
-    (function () {
-      // Appendix B of the 2027 New Testament manual has one Fast-Sunday lesson
-      // per month. We just pick the lesson matching the current calendar month.
-      var baseURL = "https://www.churchofjesuschrist.org/study/manual/";
-      var manualYearPiece = "come-follow-me-for-home-and-church-new-testament-2027/"; // update at year change
-      var appendixURL = "54-appendix-b/"; // double check at year change. Fast-Sunday lessons are in Appendix B of the 2027 manual.
-      var BASE_URL = baseURL + manualYearPiece + appendixURL;
-      var months = [
-        "001-plan-of-happiness",    // January
-        "002-prayer",               // February
-        "003-prophets-scriptures",  // March
-        "004-commandments",         // April
-        "005-baptism-confirmation", // May
-        "006-church",               // June
-        "007-family",               // July
-        "008-invite",               // August
-        "009-learn",                // September
-        "010-serve",                // October
-        "011-priesthood",           // November
-        "012-temple"                // December
-      ];
-
-      var monthIndex = new Date().getMonth(); // 0 = January … 11 = December
-      var fastSunLink = document.getElementById("fast-sun");
-      if (fastSunLink && months[monthIndex]) {
-        fastSunLink.href = BASE_URL + months[monthIndex];
-      }
-    })();
-  </script>
-
     <!-- ========================= LEADERS ========================= -->
     <section id="leaders" class="section" aria-labelledby="leaders-heading">
       <div class="section__head">
@@ -530,8 +468,8 @@
     </div>
   </footer>
 
-  <!-- Legend click-to-filter for the events calendar -->
-  <script src="events-filter.js"></script>
+  <!-- Shared site scripts: Come, Follow Me + Fast-Sunday links, event filter -->
+  <script src="scripts.js"></script>
 
 </body>
 </html>
