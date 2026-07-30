@@ -359,6 +359,9 @@
           <a id="cfm-link" class="btn btn--primary" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-new-testament-2027/01" target="_blank" rel="noopener">
             🗓️ This Week's "Come, Follow Me" Lesson →
           </a>
+          <a id="fast-sun" class="btn btn--tertiary" href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-new-testament-2027/54-appendix-b/001-plan-of-happiness" target="_blank" rel="noopener">
+            🗓️ This Month's Fast-Sunday Lesson →
+          </a>
           <a class="btn btn--secondary" href="https://www.churchofjesuschrist.org/study/come-follow-me/additional-resources-for-teaching-children" target="_blank" rel="noopener">
             ♡ Come, Follow Me Resources →
           </a>
@@ -399,6 +402,38 @@
       }
       // If the date is outside the 2027 manual, the link keeps its default
       // href (week 01) rather than pointing to a non-existent week.
+    })();
+  </script>
+
+  <!-- Update the "Fast-Sunday" link to the current month automatically -->
+  <script>
+    (function () {
+      // Appendix B of the 2027 New Testament manual has one Fast-Sunday lesson
+      // per month. We just pick the lesson matching the current calendar month.
+      var baseURL = "https://www.churchofjesuschrist.org/study/manual/";
+      var manualYearPiece = "come-follow-me-for-home-and-church-new-testament-2027/"; // update at year change
+      var appendixURL = "54-appendix-b/"; // double check at year change. Fast-Sunday lessons are in Appendix B of the 2027 manual.
+      var BASE_URL = baseURL + manualYearPiece + appendixURL;
+      var months = [
+        "001-plan-of-happiness",    // January
+        "002-prayer",               // February
+        "003-prophets-scriptures",  // March
+        "004-commandments",         // April
+        "005-baptism-confirmation", // May
+        "006-church",               // June
+        "007-family",               // July
+        "008-invite",               // August
+        "009-learn",                // September
+        "010-serve",                // October
+        "011-priesthood",           // November
+        "012-temple"                // December
+      ];
+
+      var monthIndex = new Date().getMonth(); // 0 = January … 11 = December
+      var fastSunLink = document.getElementById("fast-sun");
+      if (fastSunLink && months[monthIndex]) {
+        fastSunLink.href = BASE_URL + months[monthIndex];
+      }
     })();
   </script>
 
