@@ -2,10 +2,11 @@
 //  Cherry Hill 9th Ward Primary — shared site scripts
 //  Loaded by every page (index.html = current year, 2027.html = next year, …).
 //
-//  Three features live here:
+//  Four features live here:
 //    1) Weekly "Come, Follow Me" link  — auto-advances to the current week
 //    2) Monthly "Fast-Sunday" link      — auto-advances to the current month
-//    3) Event legend click-to-filter    — filter the calendar by color
+//    3) Past-event cleanup              — drops events at 2 AM the day after
+//    4) Event legend click-to-filter    — filter the calendar by color
 //
 //  Each page tells the scripts which year it is simply by the links already on
 //  the page (the #cfm-link / #fast-sun hrefs), so nothing year-specific lives in
@@ -83,14 +84,87 @@
     if (slug) link.href = baseFromHref(link.getAttribute("href")) + slug;
   }
 
-  // 3) Event legend click-to-filter ------------------------------------------
+  // 3) Past-event cleanup ----------------------------------------------------
+  // Events disappear at 2 AM the morning after they finish, so the calendar
+  // never leads with something that already happened. Nothing is deleted —
+  // the <li> stays in the HTML until you prune it at the year change.
+
+  var MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+                "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+  // Which calendar year this page's events belong to. Normally read from the
+  // Come, Follow Me link (every page has one); a `data-year` on <ul class="events">
+  // overrides it if a page ever needs to say so explicitly.
+  function pageYear() {
+    var list = document.querySelector(".events");
+    if (list && /^\d{4}$/.test(list.getAttribute("data-year") || "")) {
+      return Number(list.getAttribute("data-year"));
+    }
+    var link = document.getElementById("cfm-link");
+    var match = link && link.getAttribute("href").match(/-(\d{4})\//);
+    return match ? Number(match[1]) : null; // no year found → expire nothing
+  }
+
+  // The moment a card should vanish, or null if we can't read a date off it.
+  // "TBA"/"TBD" cards land in the null case on purpose: with no real date they
+  // stay up until someone fills the date in or removes them by hand.
+  function expiresAt(card, year) {
+    var monthEl = card.querySelector(".event__month");
+    var dayEl = card.querySelector(".event__day");
+    if (!monthEl || !dayEl) return null;
+
+    var month = MONTHS.indexOf(monthEl.textContent.trim().toUpperCase().slice(0, 3));
+    if (month < 0) return null;
+
+    // Last number wins, so a range ("3-4") expires the morning after day 4.
+    var days = dayEl.textContent.match(/\d+/g);
+    if (!days) return null;
+
+    // Day + 1 at 2 AM. A day past the end of the month rolls forward on its
+    // own — Dec 31 becomes Jan 1 of the next year, which is what we want.
+    return new Date(year, month, Number(days[days.length - 1]) + 1, 2, 0, 0);
+  }
+
+  function hidePastEvents() {
+    var list = document.querySelector(".events");
+    var year = pageYear();
+    if (!list || year === null) return;
+
+    var now = new Date();
+    var cards = Array.prototype.slice.call(list.querySelectorAll(".event"));
+    var anyLeft = false;
+
+    cards.forEach(function (card) {
+      var expiry = expiresAt(card, year);
+      if (expiry && now >= expiry) {
+        card.classList.add("is-expired");
+      } else {
+        anyLeft = true;
+      }
+    });
+
+    // Everything on the page is in the past: swap the whole calendar UI for a
+    // single note, since there is nothing left to filter.
+    if (!anyLeft) {
+      var pastMsg = document.querySelector(".events-past");
+      if (pastMsg) pastMsg.hidden = false;
+      [".legend", ".legend__hint"].forEach(function (sel) {
+        var el = document.querySelector(sel);
+        if (el) el.hidden = true;
+      });
+    }
+  }
+
+  // 4) Event legend click-to-filter ------------------------------------------
   function initEventFilter() {
     var legend = document.querySelector(".legend");
     var eventsList = document.querySelector(".events");
     if (!legend || !eventsList) return;
 
     var buttons = Array.prototype.slice.call(legend.querySelectorAll(".legend__btn"));
-    var cards = Array.prototype.slice.call(eventsList.querySelectorAll(".event"));
+    // Expired cards are out of the filter entirely, so filtering never brings
+    // a past event back. hidePastEvents() must therefore run first.
+    var cards = Array.prototype.slice.call(eventsList.querySelectorAll(".event:not(.is-expired)"));
     var emptyMsg = document.querySelector(".events-empty");
     var active = null; // the category currently filtered to, or null for "show all"
 
@@ -119,6 +193,7 @@
   function init() {
     updateWeekLink();
     updateFastSundayLink();
+    hidePastEvents();
     initEventFilter();
   }
 

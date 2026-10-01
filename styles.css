@@ -37,6 +37,9 @@
 
 * { box-sizing: border-box; }
 
+/* The hidden attribute must win over our own display rules (.legend is flex). */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -219,8 +222,12 @@ a { color: var(--terracotta); }
 .legend__dot--ward    { background: var(--terracotta); }
 /* Events hidden by the legend filter. Two classes beats `.event { display: flex }`. */
 .event.is-hidden { display: none; }
-/* Shown by the filter script when a category has no events. */
-.events-empty {
+/* Events the script retired at 2 AM the morning after they happened. */
+.event.is-expired { display: none; }
+/* Notes the script shows when nothing is left to display: .events-empty when a
+   filter matches no events, .events-past when every event on the page is over. */
+.events-empty,
+.events-past {
   text-align: center;
   color: var(--ink-soft);
   font-size: 1rem;
